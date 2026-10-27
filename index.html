@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Moraes | Private Real Estate Advisory</title>
+    <style>
+        :root {
+            --primary: #0B3B2E;
+            --primary-dark: #072A21;
+            --accent: #C5A880;
+            --bg-light: #F9F9F8;
+            --text-dark: #2C2C2C;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo p {
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(7,42,33,0.7), rgba(11,59,46,0.8)), url('assets/vale-do-cafe.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: #E0E0E0;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 14px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #D4B98E;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 220px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-img img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Pedro Moraes</h1>
+            <p>Private Real Estate Advisory</p>
+        </div>
+        <nav>
+            <a href="#imoveis">Imóveis</a>
+            <a href="#lancamentos">Lançamentos</a>
+            <a href="#sobre">Quem Somos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Inteligência imobiliária e representação exclusiva para ativos de alto padrão</h2>
+        <p>Da elegância urbana da Zona Sul e oportunidades corporativas do Rio ao refúgio exclusivo do Vale do Café.</p>
+        <a href="https://wa.me/5521974138075" class="btn" target="_blank">Falar com Consultor</a>
+    </section>
+
+    <!-- Seção de Imóveis Exclusivos -->
+    <section id="imoveis" class="section">
+        <h2 class="section-title">Imóveis Exclusivos</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-img" style="background-image: url('assets/imovel1.jpg');"></div>
+                <div class="card-content">
+                    <h3>Residencial Zona Sul</h3>
+                    <p>Alto padrão, acabamentos nobres e localização estratégica na Zona Sul do Rio de Janeiro.</p>
+                    <a href="https://wa.me/5521974138075" class="btn" style="padding: 10px 20px; font-size: 0.8rem;" target="_blank">Solicitar Dossiê</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('assets/imovel2.jpg');"></div>
+                <div class="card-content">
+                    <h3>Ativo Corporativo / Centro</h3>
+                    <p>Oportunidades comerciais e lajes corporativas de alto desempenho no Centro do Rio.</p>
+                    <a href="https://wa.me/5521974138075" class="btn" style="padding: 10px 20px; font-size: 0.8rem;" target="_blank">Solicitar Dossiê</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('assets/imovel3.jpg');"></div>
+                <div class="card-content">
+                    <h3>Refúgio no Vale do Café</h3>
+                    <p>Chácaras, condomínios fechados e propriedades exclusivas em Miguel Pereira e região.</p>
+                    <a href="https://wa.me/5521974138075" class="btn" style="padding: 10px 20px; font-size: 0.8rem;" target="_blank">Solicitar Dossiê</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Lançamentos -->
+    <section id="lancamentos" class="section" style="background-color: #EFECE6;">
+        <h2 class="section-title">Lançamentos & Oportunidades</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-img" style="background-image: url('assets/lancamento1.jpg');"></div>
+                <div class="card-content">
+                    <h3>Lançamento Exclusivo</h3>
+                    <p>Empreendimentos selecionados na planta com alto potencial de valorização e inteligência de mercado.</p>
+                    <a href="https://wa.me/5521974138075" class="btn" style="padding: 10px 20px; font-size: 0.8rem;" target="_blank">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section id="sobre" class="section about">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="assets/1000407047.jpg" alt="Pedro Moraes">
+            </div>
+            <div class="about-text">
+                <h3>Quem Somos</h3>
+                <p>A PMI – Private Real Estate Advisory atua sob um modelo rigoroso de inteligência patrimonial, desmobilização de ativos e representação exclusiva. Conectamos investidores e proprietários às melhores oportunidades residenciais, corporativas e de veraneio no estado do Rio de Janeiro.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5521974138075" class="whatsapp-float" target="_blank">
+        💬 WhatsApp
+    </a>
+
+    <footer id="contato">
+        <p>&copy; 2027 Pedro Moraes Imóveis. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px; color: var(--accent);">Contato: (21) 97413-8075</p>
+    </footer>
+
+</body>
+</html>
